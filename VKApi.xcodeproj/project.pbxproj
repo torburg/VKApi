@@ -13,6 +13,7 @@
 		8852D12F24D3276C008AE5B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8852D12E24D3276C008AE5B9 /* Assets.xcassets */; };
 		8852D13A24D32C4A008AE5B9 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852D13924D32C4A008AE5B9 /* AuthorizeViewController.swift */; };
 		8852D13C24D334A2008AE5B9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852D13B24D334A2008AE5B9 /* NetworkManager.swift */; };
+		8852D14024D33DEE008AE5B9 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852D13F24D33DEE008AE5B9 /* MainListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8852D13324D3276C008AE5B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8852D13924D32C4A008AE5B9 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		8852D13B24D334A2008AE5B9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8852D13F24D33DEE008AE5B9 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				8852D13924D32C4A008AE5B9 /* AuthorizeViewController.swift */,
+				8852D13F24D33DEE008AE5B9 /* MainListViewController.swift */,
 				8852D12224D32765008AE5B9 /* AppDelegate.swift */,
 				8852D13B24D334A2008AE5B9 /* NetworkManager.swift */,
 				8852D12424D32765008AE5B9 /* SceneDelegate.swift */,
@@ -139,6 +142,7 @@
 				8852D12D24D32765008AE5B9 /* VKApi.xcdatamodeld in Sources */,
 				8852D12324D32765008AE5B9 /* AppDelegate.swift in Sources */,
 				8852D13C24D334A2008AE5B9 /* NetworkManager.swift in Sources */,
+				8852D14024D33DEE008AE5B9 /* MainListViewController.swift in Sources */,
 				8852D13A24D32C4A008AE5B9 /* AuthorizeViewController.swift in Sources */,
 				8852D12524D32765008AE5B9 /* SceneDelegate.swift in Sources */,
 			);

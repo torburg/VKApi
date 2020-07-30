@@ -8,9 +8,14 @@
 
 import Foundation
 
+enum AuthResponse {
+    case success
+    case error
+}
+
 class NetworkManager {
     
-    func authorize() {
-        print("auth vk")
+    func authorize(completion: (AuthResponse)->()) {
+        completion(AuthResponse.success)
     }
 }
