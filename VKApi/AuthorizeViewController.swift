@@ -51,21 +51,22 @@ class AuthorizeViewController: UIViewController {
             appIDLabel.widthAnchor.constraint(equalTo: authorizeButton.widthAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
+        appIDLabel.becomeFirstResponder()
     }
     
     @objc
     func authorizeTapped() {
-        if appIDLabel.hasText {
-            networkManager.authorize { response in
+        if appIDLabel.hasText, let clientID = appIDLabel.text {
+            networkManager.authorize(clientID) { response in
                 switch response {
                 case .success:
                     let viewController = MainListViewController()
                     viewController.modalPresentationStyle = .fullScreen
-                    present(viewController, animated: true, completion: nil)
+                    self.present(viewController, animated: true, completion: nil)
                 case let error:
                     let alertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "Close", style: .destructive, handler: nil))
-                    present(alertController, animated: true, completion: nil)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         } else {

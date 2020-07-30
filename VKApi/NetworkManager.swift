@@ -10,12 +10,38 @@ import Foundation
 
 enum AuthResponse {
     case success
-    case error
+    case error(error: Error)
+    case urlFailure
 }
 
 class NetworkManager {
     
-    func authorize(completion: (AuthResponse)->()) {
-        completion(AuthResponse.success)
+    private let authLink = "https://oauth.vk.com/authorize"
+    private let apiLink = "https://api.vk.com/method/"
+    private let token = ""
+    private let session = URLSession.shared
+    
+    func authorize(_ clientID: String, completion: @escaping (AuthResponse)->()) {
+        
+        let url = authLink + "?client_id=" + clientID + "&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends&response_type=token&v=5.52"
+        guard let authUrl = URL(string: url) else { completion(.urlFailure); return  }
+        session.dataTask(with: authUrl) { [weak self] (data, response, error) in
+            guard let self = self else { return }
+            var authResult: AuthResponse
+            defer {
+                DispatchQueue.main.async {
+                    completion(authResult)
+                }
+            }
+            guard error == nil else {
+                print(error!.localizedDescription)
+                authResult = .error(error: error!)
+                return
+            }
+            print(response)
+            // TODO: - Verify user token
+            authResult = .success
+        }.resume()
+        
     }
 }
