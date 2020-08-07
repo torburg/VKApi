@@ -18,6 +18,8 @@ class NetworkManager {
     
     private let authLink = "https://oauth.vk.com/authorize"
     private let apiLink = "https://api.vk.com/method/"
+    private let ownerId = "776211"
+    private let version = "v=5.21"
     private let token = ""
     private let session = URLSession.shared
     
@@ -42,6 +44,15 @@ class NetworkManager {
             // TODO: - Verify user token
             authResult = .success
         }.resume()
+    }
+    
+    func sendRequest() {
         
+    }
+    
+    func createApiLink(with method: String) -> URL? {
+        let urlString = apiLink + method + "?owner_id=" + ownerId + "&" + version + "&" + "access_token=" + token
+        guard let url = URL(string: urlString) else { return nil }
+        return url
     }
 }

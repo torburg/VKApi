@@ -31,6 +31,8 @@ class MainListViewController: UIViewController {
             postList.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ]
         NSLayoutConstraint.activate(constraints)
+        
+        postList.register(PostListViewCell.self, forCellReuseIdentifier: PostListViewCell.reuseIdentifier)
     }
 
 }
@@ -41,7 +43,7 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = postList.dequeueReusableCell(withIdentifier: "post", for: indexPath)
+        let cell = postList.dequeueReusableCell(withIdentifier: PostListViewCell.reuseIdentifier, for: indexPath)
         return cell
     }
     

@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../Post+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../Post+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/maksimtorburg/Docs/Swift/VKApi/VKApi/ImageTransformer.swift">
+   </FileRef>
+   <FileRef
       location = "self:VKApi.xcodeproj">
    </FileRef>
 </Workspace>
