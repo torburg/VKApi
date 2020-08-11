@@ -11,10 +11,14 @@ import UIKit
 class MainListViewController: UIViewController {
     
     var postList: UITableView!
+    let dataManager = DataManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
 
+        dataManager.getData()
         setPostListtable()
     }
     

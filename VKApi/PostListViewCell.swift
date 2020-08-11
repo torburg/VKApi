@@ -33,8 +33,12 @@ class PostListViewCell: UITableViewCell {
     }
     
     func obtainPost(post: Post) {
-        if let avatarImage = post.avatar {
-            avatar = avatarImage
+        if let avatarURL = post.avatar {
+            NetworkManager.shared.getImageData(from: avatarURL, completion: { (data) in
+                if data != nil, let image = UIImage(data: data!) {
+                    self.avatar = image
+                }
+            })
         }
         if let titleText = post.title {
             title.text = titleText
@@ -42,8 +46,12 @@ class PostListViewCell: UITableViewCell {
         if let date = post.date {
             dateLabel.text = date.toStringFormatted()
         }
-        if let photoImage = post.photo {
-            photo = photoImage
+        if let photoURL = post.photo {
+            NetworkManager.shared.getImageData(from: photoURL, completion: { (data) in
+                if data != nil, let photo = UIImage(data: data!) {
+                    self.photo = photo
+                }
+            })
         }
         if let contentText = post.content {
             content.text = contentText
